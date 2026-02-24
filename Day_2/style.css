@@ -1,118 +1,150 @@
+/* بنشيل أي margin و padding افتراضي من المتصفح */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;              /* إلغاء المسافات الخارجية الافتراضية */
+  padding: 0;             /* إلغاء المسافات الداخلية الافتراضية */
+  box-sizing: border-box; /* يخلي ال width و height يشملوا البادينج والبوردر */
 }
 
+/* تنسيق جسم الصفحة بالكامل */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(45deg, #a10808, #203db0);
-  font-weight: 400;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif; /* نوع الخط */
+  background: linear-gradient(45deg, #a10808, #203db0); 
+  /* خلفية متدرجة بزاوية 45 درجة من أحمر لأزرق */
+
+  font-weight: 400;  /* سمك الخط عادي */
+  color: #333;       /* لون النص رمادي غامق */
+
+  display: flex;              /* تفعيل نظام flexbox */
+  justify-content: center;    /* توسيط أفقي */
+  align-items: center;        /* توسيط رأسي */
+  min-height: 100vh;          /* ارتفاع الصفحة قد طول الشاشة */
 }
 
+/* الصندوق الأساسي اللي شايل اللعبة */
 .container {
-  position: relative;
-  width: 90vw;
-  height: 85vh;
-  background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
+  position: relative;   /* مهم عشان العناصر المطلقة تتموضع بالنسبة له */
+  width: 90vw;          /* ياخد 90% من عرض الشاشة */
+  height: 85vh;         /* ياخد 85% من ارتفاع الشاشة */
+  background-color: rgba(255, 255, 255, 0.35); 
+  /* خلفية بيضاء بشفافية */
+
+  border-radius: 20px;  /* زوايا دائرية */
+  overflow: hidden;     /* يخفي أي حاجة تطلع برا الصندوق */
+
+  display: flex;        /* نقسمه نصين */
 }
 
-/* ================= PLAYERS ================= */
-
+/* كل لاعب */
 .player {
-  flex: 1;
-  padding: 3rem;
+  flex: 1;              /* كل لاعب ياخد نص المساحة */
+  padding: 3rem;        /* مسافة داخلية */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
+  flex-direction: column;  /* العناصر تبقى فوق بعض */
+  justify-content: center; /* توسيط رأسي */
+  align-items: center;     /* توسيط أفقي */
+  transition: all 0.3s;    /* حركة ناعمة عند التغيير */
 }
 
+/* اسم اللاعب */
 .player-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;       /* حجم كبير */
+  margin-bottom: 1rem;   /* مسافة تحت العنوان */
 }
 
+/* السكور الأساسي */
 .player-score {
-  font-size: 4rem;
+  font-size: 4rem;       /* أكبر رقم في الصفحة */
   margin-bottom: 2rem;
 }
 
+/* صندوق السكور الحالي */
 .current-score {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5); 
+  /* خلفية فاتحة شفافة */
+
+  padding: 1rem 2rem;    /* مسافة داخلية */
+  border-radius: 10px;   /* زوايا ناعمة */
+  text-align: center;    /* النص في المنتصف */
 }
 
+/* رقم السكور الحالي */
 .current-score-value {
   font-size: 1.8rem;
   margin-top: 0.5rem;
 }
 
-/* Active Player */
+/* اللاعب النشط */
 .active {
   background-color: rgba(255, 255, 255, 0.4);
+  /* لما اللاعب يبقى دوره الخلفية تبقى أوضح */
 }
 
 .active .player-title {
-  font-weight: 700;
+  font-weight: 700; /* اسم اللاعب النشط يبقى تخين */
 }
 
-/* ================= BUTTONS ================= */
+/* ================= الأزرار ================= */
 
 .btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute;    /* تموضع حر */
+  left: 50%;             /* يتحرك لنص الشاشة */
+  transform: translateX(-50%); 
+  /* يرجعه نص عرضه عشان يبقى في النص بالظبط */
+
   padding: 0.6rem 1.5rem;
   background-color: white;
-  border: none;
-  border-radius: 30px;
+  border: none;          /* من غير بوردر */
+  border-radius: 30px;   /* زر دائري */
   font-size: 1rem;
-  cursor: pointer;
+  cursor: pointer;       /* شكل الماوس يبقى إيد */
+
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s;
+  /* ظل خفيف */
+
+  transition: all 0.2s;  /* حركة ناعمة */
 }
 
+/* تأثير عند المرور بالماوس */
 .btn:hover {
   transform: translateX(-50%) scale(1.05);
+  /* يكبر سنة بسيطة */
 }
 
+/* تأثير عند الضغط */
 .btn:active {
   transform: translateX(-50%) scale(0.97);
+  /* يصغر شوية */
 }
 
-/* Button positions */
+/* زر New Game */
 .btn-new {
-  top: 2rem;
+  top: 2rem;  /* في أعلى الصفحة */
 }
 
+/* زر Roll Dice */
 .btn-roll {
-  bottom: 6rem;
+  bottom: 6rem; /* قريب من تحت */
 }
 
+/* زر Hold */
 .btn-hold {
-  bottom: 2rem;
+  bottom: 2rem; /* تحت خالص */
 }
 
-/* ================= DICE ================= */
+/* ================= صورة النرد ================= */
 
 .dice {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  /* يحطه في نص الشاشة بالظبط */
+
   height: 120px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
+}
+
+.hidden {
+  display: none; /* يخفي العنصر */
 }
