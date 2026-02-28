@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #a6a2a2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.bg{
+    background: url('https://imgs.search.brave.com/Mhy4dAvs2Oye_tW1pKvIUx8UKQYDS_bejk_r2LyNT7I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FiLzRk/LzI0L2FiNGQyNDEz/YzM2NjE4MWZmMTI4/MTk5ZjAzOWJkN2Ix/LmpwZw') no-repeat center center/cover;
+    position: absolute;
+    top: -30;
+    left: -30;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(0px); 
+}
+
+.loading-text{
+    font-size: 50px;
+    color: #a6a2a2;
+}
