@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --left-bg-color: rgba(118, 116, 225, 0.2) ;
+    --right-bg-color: rgba(43, 43, 43, 0.8) ;
+    --other-width:25%;
+    --hover-width:75%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 4rem;
+    color: aliceblue;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;}
+
+.button{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    border: 0.2rem solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 10rem;
+    height: 3rem;
+}
+.button:hover{
+    background-color:rgba(90, 87, 87,0.3);
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+
+.split{
+    position: absolute;
+    width: 50% ;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.6s ease-in-out;
+
+}
+
+.split.left{
+    left: 0;
+    background: url('https://imgs.search.brave.com/RyNdEJJQ7bBaghl8gmUHQLO8IzMOmQLoCsgPR8lYWHU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvcHM1/LXBpY3R1cmVzLWE4/eDEwbWxhMDB1ZXly/ZWsuanBn');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.split.right{
+    right: 0;
+    background: url('https://imgs.search.brave.com/vIyUw_gAvSkCdpX7L_tbWUEF1mZ45Au569emwnBwxT0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZHlubWVkaWEtMS5t/aWNyb3NvZnQuY29t/L2lzL2ltYWdlL21p/Y3Jvc29mdGNvcnAv/NjY3NDM4OTBfSGln/aGxpZ2h0X1Zpc0lE/XzMwMDB4MTY4MjpW/UDItODU5eDU0MA');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+/* hove effect */
+.hover-left .left{
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--other-width);
+}
+.hover-right .right{
+    width: var(--hover-width);
+}
+.hover-right .left{
+    width: var(--other-width);
+}
+
