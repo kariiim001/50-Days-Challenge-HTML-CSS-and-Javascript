@@ -1,0 +1,50 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.Keinitic_Loader{
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+.Keinitic_Loader::before,
+.Keinitic_Loader::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: #fff;
+    animation: animate 1s linear infinite;
+}
+
+.Keinitic_Loader::after{
+    border: 8px solid transparent;
+    border-bottom-color: #fff;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
